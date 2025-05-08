@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Registered Users</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <h2>Registered Users</h2>
+  <div id="userList"></div>
+
+  <script>
+    const userListDiv = document.getElementById('userList');
+    const users = JSON.parse(localStorage.getItem('users')) || [];
+
+    if (users.length === 0) {
+      userListDiv.innerHTML = "<p>No users registered.</p>";
+    } else {
+      const table = document.createElement('table');
+      table.innerHTML = `
+        <tr>
+          <th>Name</th><th>DOB</th><th>Gender</th><th>Mobile</th><th>Email</th>
+        </tr>
+      `;
+
+      users.forEach(user => {
+        const row = document.createElement('tr');
+        row.innerHTML = `
+          <td>${user.firstName} ${user.lastName}</td>
+          <td>${user.dob}</td>
+          <td>${user.gender}</td>
+          <td>${user.mobile}</td>
+          <td>${user.email}</td>
+        `;
+        table.appendChild(row);
+      });
+
+      userListDiv.appendChild(table);
+    }
+  </script>
+</body>
+</html>
