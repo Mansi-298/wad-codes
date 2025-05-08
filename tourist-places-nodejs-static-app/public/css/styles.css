@@ -1,0 +1,15 @@
+body {
+    background-color: #f0f8ff;
+    font-family: Arial, sans-serif;
+  }
+  
+  h1 {
+    color: #007bff;
+  }
+  
+  .carousel-item img {
+    height: 400px;
+    object-fit: cover;
+    border-radius: 10px;
+  }
+  
