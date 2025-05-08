@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Feedback Form</title>
+  <link rel="stylesheet" href="https://code.jquery.com/mobile/1.5.2/jquery.mobile-1.5.2.min.css" />
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://code.jquery.com/mobile/1.5.2/jquery.mobile-1.5.2.min.js"></script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      color: #333;
+      padding: 20px;
+    }
+
+    .ui-page {
+      background-color: #ffffff;
+    }
+
+    .feedback-form {
+      background-color: #ffffff;
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+      margin-top: 20px;
+    }
+
+    .form-section {
+      margin-bottom: 15px;
+    }
+
+    .form-section label {
+      font-weight: bold;
+      margin-bottom: 5px;
+      display: block;
+    }
+
+    .form-section input, 
+    .form-section textarea, 
+    .form-section select {
+      width: 100%;
+      padding: 10px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      font-size: 14px;
+      margin-top: 5px;
+    }
+
+    .form-section textarea {
+      resize: vertical;
+    }
+
+    .ui-slider .ui-btn-active {
+      background: #4472C4 !important;
+    }
+
+    .form-section button {
+      background-color: #4472C4;
+      color: white;
+      border: none;
+      padding: 12px 20px;
+      border-radius: 5px;
+      width: 100%;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    .form-section button:hover {
+      background-color: #355E99;
+    }
+
+    .footer-text {
+      text-align: center;
+      font-size: 14px;
+      color: #555;
+      padding: 10px;
+    }
+
+    .header-text {
+      font-size: 24px;
+      text-align: center;
+      color: #4472C4;
+      font-weight: bold;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <div data-role="page" id="feedbackPage">
+    <div data-role="header">
+      <h1 class="header-text">Feedback Form</h1>
+    </div>
+
+    <div data-role="content">
+      <form class="feedback-form" id="feedbackForm">
+        <div class="form-section">
+          <label for="name">Name:</label>
+          <input type="text" name="name" id="name" placeholder="Enter your name" required>
+        </div>
+
+        <div class="form-section">
+          <label for="email">Email:</label>
+          <input type="email" name="email" id="email" placeholder="Enter your email" required>
+        </div>
+
+        <div class="form-section">
+          <label for="rating">Rating:</label>
+          <select name="rating" id="rating" data-native-menu="false" required>
+            <option value="1">1 - Poor</option>
+            <option value="2">2 - Fair</option>
+            <option value="3">3 - Good</option>
+            <option value="4">4 - Very Good</option>
+            <option value="5">5 - Excellent</option>
+          </select>
+        </div>
+
+        <div class="form-section">
+          <label for="feedback">Feedback:</label>
+          <textarea name="feedback" id="feedback" rows="4" placeholder="Your feedback" required></textarea>
+        </div>
+
+        <div class="form-section">
+          <label for="subscribeToggle">Subscribe to newsletter:</label>
+          <select name="subscribeToggle" id="subscribeToggle" data-role="slider" data-mini="true">
+            <option value="off">No</option>
+            <option value="on">Yes</option>
+          </select>
+        </div>
+
+        <div class="form-section">
+          <button type="submit" data-role="button">Submit Feedback</button>
+        </div>
+      </form>
+    </div>
+
+    <div data-role="footer">
+      <div class="footer-text">Thank you for your feedback!</div>
+    </div>
+  </div>
+
+  <script>
+    $(document).ready(function() {
+      // Handling form submit
+      $("#feedbackForm").submit(function(event) {
+        event.preventDefault(); // Prevent default form submission
+        
+        // Getting the values from the form
+        const name = $("#name").val();
+        const email = $("#email").val();
+        const rating = $("#rating").val();
+        const feedback = $("#feedback").val();
+        const subscribe = $("#subscribeToggle").val();
+
+        // Creating a message to display in the alert
+        const message = `
+          Name: ${name}\n
+          Email: ${email}\n
+          Rating: ${rating}\n
+          Feedback: ${feedback}\n
+          Subscribe: ${subscribe === "on" ? "Yes" : "No"}
+        `;
+        
+        // Displaying the alert with the collected data
+        alert("Feedback Submitted:\n" + message);
+
+        // Optionally clear the form after submission
+        // $(this).trigger("reset");
+      });
+    });
+  </script>
+
+</body>
+</html>
