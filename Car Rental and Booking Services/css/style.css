@@ -1,0 +1,27 @@
+/* Optional custom styles */
+h1, h2, h5 {
+    font-family: 'Segoe UI', sans-serif;
+  }
+  
+  /* Optional custom styles for animations and appearance */
+.carousel-item {
+  transition: transform 0.5s ease-in-out;
+}
+
+/* Add any custom animations */
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+body {
+  animation: fadeIn 2s ease-in-out;
+}
+
+h1, h2, p {
+  font-family: 'Segoe UI', sans-serif;
+}
+
+footer {
+  background-color: #343a40;
+}
