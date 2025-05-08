@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>CityCare Emergency Services</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body style="background-color: #f3f9ff;">
+
+<!-- Header -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">CityCare</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item"><a class="nav-link active" href="#">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
+        <li class="nav-item"><a class="nav-link" href="contact.html">Contact Us</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Hero Section -->
+<div class="container my-5 text-center">
+  <h1 class="text-primary">Welcome to CityCare Emergency Services</h1>
+  <p class="lead">We are here 24/7 to provide rapid medical help in your city.</p>
+  <button class="btn btn-danger mt-3" onclick="goToContact()">Contact Us</button>
+</div>
+
+<!-- Services Section -->
+<div class="container" id="services">
+  <h2 class="text-center text-success mb-4">Our Emergency Services</h2>
+  <div class="row text-center">
+    <div class="col-md-3">
+      <img src="assets/images/ambulance.png" alt="Ambulance" class="img-fluid" width="100">
+      <h5>Ambulance Service</h5>
+    </div>
+    <div class="col-md-3">
+      <img src="assets/images/doctor.png" alt="Doctor" class="img-fluid" width="100">
+      <h5>On-Call Doctor</h5>
+    </div>
+    <div class="col-md-3">
+      <img src="assets/images/hospital-bed.png" alt="Bed" class="img-fluid" width="100">
+      <h5>Emergency Beds</h5>
+    </div>
+    <div class="col-md-3">
+      <img src="assets/images/helpline.png" alt="Helpline" class="img-fluid" width="100">
+      <h5>24/7 Helpline</h5>
+    </div>
+  </div>
+</div>
+
+<!-- Footer -->
+<footer class="bg-dark text-white text-center p-3 mt-5">
+  <p>&copy; 2025 CityCare Emergency Services | All rights reserved</p>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="js/script.js"></script>
+</body>
+</html>
