@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Department Grid - jQuery</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 40px;
+    }
+
+    .grid-container {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      max-width: 800px;
+      margin: auto;
+    }
+
+    .grid-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin: 10px;
+      width: 100px;
+    }
+
+    .dept-btn {
+      background-color: #4472C4;
+      color: white;
+      border: none;
+      border-radius: 10px;
+      padding: 15px 20px;
+      font-size: 14px;
+      width: 100%;
+      cursor: pointer;
+      margin-bottom: 10px;
+    }
+
+    .info-btn {
+      background-color: #ED7D31;
+      color: white;
+      border: none;
+      border-radius: 10px;
+      padding: 10px 15px;
+      width: 100%;
+      cursor: pointer;
+    }
+
+    .info-box {
+      text-align: center;
+      margin-top: 30px;
+      font-weight: bold;
+      color: #333;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="grid-container">
+    <div class="grid-item">
+      <button class="dept-btn">IT</button>
+      <button class="info-btn" data-info="Information Technology Department">Button</button>
+    </div>
+    <div class="grid-item">
+      <button class="dept-btn">COMP</button>
+      <button class="info-btn" data-info="Computer Engineering Department">Button</button>
+    </div>
+    <div class="grid-item">
+      <button class="dept-btn">ETC</button>
+      <button class="info-btn" data-info="Electronics & Telecommunication Department">Button</button>
+    </div>
+    <div class="grid-item">
+      <button class="dept-btn">MECH</button>
+      <button class="info-btn" data-info="Mechanical Engineering Department">Button</button>
+    </div>
+    <div class="grid-item">
+      <button class="dept-btn">ELECT</button>
+      <button class="info-btn" data-info="Electrical Engineering Department">Button</button>
+    </div>
+  </div>
+
+  <script>
+    $(document).ready(function () {
+      $(".info-btn").click(function () {
+        const info = $(this).data("info");
+        // Store the department information in localStorage
+        localStorage.setItem("departmentInfo", info);
+        // Redirect to the new page
+        window.location.href = "department_info.html";
+      });
+    });
+  </script>
+
+</body>
+</html>

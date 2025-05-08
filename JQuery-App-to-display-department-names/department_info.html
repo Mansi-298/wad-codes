@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Department Information</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+  <h1>Department Information</h1>
+  <div id="departmentInfo"></div>
+
+  <script>
+    $(document).ready(function () {
+      // Retrieve the department information from localStorage
+      const info = localStorage.getItem("departmentInfo");
+      if (info) {
+        $("#departmentInfo").text(info);
+      } else {
+        $("#departmentInfo").text("No department information available.");
+      }
+    });
+  </script>
+</body>
+</html>
