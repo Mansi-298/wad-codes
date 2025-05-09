@@ -1,0 +1,23 @@
+1> POST - http://localhost:3000/api/students
+  header - Content-Type:application/json
+  body-raw-json
+  {
+  "name": "Mrunal Doe",
+  "email": "mrunal.doe@example.com",
+  "phone": "555-123-4567",
+  "address": "123 College Ave, City, State",
+  "dateOfBirth": "2000-01-15",
+  "program": "Computer Science"
+}
+
+
+2> GET -> http://localhost:3000/api/students
+   
+3> PUT -> http://localhost:3000/api/students/:id
+     header - Content-Type:application/json
+     body -> raw -> json 
+     {
+  "program": "Data Science"
+}
+
+4> DELETE -> http://localhost:3000/api/students/:id
